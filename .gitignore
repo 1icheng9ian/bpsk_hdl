@@ -1,3 +1,6 @@
-*.asv
+# verilog
 verilog/prj/*
 *.vcd
+
+# matlab
+/matlab/*.v

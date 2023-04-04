@@ -2,23 +2,19 @@
 % cordic.m
 % Author: Li Chengqian
 % Date  : 2023/04/03
-% Func  : basic cordic algorithm
+% Func  : basic cordic float algorithm
 %%%%%%%%%%%%%%
 function [cos_out,sin_out] = cordic(phase_in)
-% phase_in  : [-pi,pi]
-% cos_out   : cosine out
-% sin_out   : sine out
+% phase_in  : phase input
+% cos_out   : cosine output
+% sin_out   : sine output
 
 %% parameter
 iteration = 16; % 迭代次数
 
-%% phase translation
-if phase_in < -pi/2 || phase_in > pi/2
-    if phase_in < 0
-        phase_in = phase_in + pi;
-    else
-        phase_in = phase_in - pi;
-    end
+%% phase pre-rotating
+if (0<phase_in) && (phase_in<pi/2)
+    
 end
 
 %% calculation
@@ -26,7 +22,7 @@ x = zeros(iteration+1,1);
 y = zeros(iteration+1,1);
 z = zeros(iteration+1,1);
 
-x(1) = 0.607253; % initial value
+x(1) = 0.607253; % 初始值赋为cos累乘值
 z(1) = phase_in;
 
 for i = 1:iteration

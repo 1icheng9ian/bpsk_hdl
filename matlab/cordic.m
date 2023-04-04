@@ -15,6 +15,8 @@ iteration = 16; % 迭代次数
 %% phase pre-rotating
 if (0<phase_in) && (phase_in<pi/2)
     
+elseif ()
+
 end
 
 %% calculation

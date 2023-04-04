@@ -1,5 +1,12 @@
 `timescale 1ns/100ps
 
+/*
+Author  : Li Chengqian
+Email   : lcq1459@163.com
+Date    : 2023/04/04
+Func    : 使用case实现的查找表
+*/
+
 module pn_rom ( 
 // write input and output here
     input               clk,

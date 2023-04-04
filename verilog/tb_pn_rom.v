@@ -4,7 +4,7 @@ module testbench();
 
 parameter DATA_WIDTH = 1;
 parameter ADDR_WIDTH = 10;
-parameter MAIN_FRE   = 100; //unit MHz
+parameter MAIN_FRE   = 1; //unit MHz
 reg                   sys_clk = 0;
 reg                   sys_rst = 0;
 reg                   ena = 0;
@@ -15,8 +15,8 @@ always begin
 end
 
 always begin
-    #50 sys_rst = 1;
-    #50 ena = 1;
+    #600 sys_rst = 1;
+    ena = 1;
 end
 
 always @(posedge sys_clk) begin
@@ -34,10 +34,10 @@ wire 	valid_out;
 
 pn_rom u_pn_rom(
 	//ports
-	.clk        		( sys_clk        		),
+	.clk        		( sys_clk           ),
 	.rst_n      		( sys_rst      		),
 	.ena        		( ena        		),
-	.address_in 		( addr 		),
+	.address_in 		( addr 		        ),
 	.data_out   		( data_out   		),
 	.valid_out  		( valid_out  		)
 );
